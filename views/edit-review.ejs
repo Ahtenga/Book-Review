@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs", {page: "edit-one"})%>
+
+<section class="edit-review">
+  <h1>Edit review</h1>
+
+  <form action="/edit/<%= review.id %>" method="POST" class="create-form">
+    <label for="date">Originally posted: <%= review.date %></label>
+    <input type="text" name="authorname" class="review-input" value="<%= review.author %>" placeholder="Author name">
+    <input type="text" name="reviewTitle" class="review-input" value="<%= review.title %>" placeholder="Review title">
+    <textarea name="review" class="review-input" placeholder="Share your review"><%= review.text %></textarea>
+    <input type="submit" value="Save changes">
+  </form>
+</section>
+
+<%- include("partials/footer.ejs")%>

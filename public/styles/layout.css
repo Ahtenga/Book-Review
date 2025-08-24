@@ -1,0 +1,50 @@
+* {
+     margin: 0;
+     padding: 0;
+     font-family: "Montserrat", sans-serif;
+}
+
+
+.navbar {
+     background-color: rgb(92, 1, 197);
+}
+
+.container {
+     display: flex;
+     justify-content: space-between;
+     padding-top: 35px;
+     padding-bottom: 35px;
+     padding-left: 150px;
+     padding-right: 150px;
+     text-align: center;
+}
+
+.item-left p {
+     font-weight: bold;
+     color: rgb(245, 235, 255);
+     font-size: 1.3rem;
+}
+
+.item-right {
+     display: flex;
+     gap: 2rem;
+}
+
+.item-right a {
+     color: rgb(245, 235, 255);
+     text-decoration: none;
+     font-size: 1rem;
+}
+
+.item-right a:hover {
+     text-decoration: underline;
+}
+
+
+.footer {
+     background-color: rgb(92, 1, 197);
+     color: rgb(245, 235, 255);
+     text-align: center;
+     padding: 2rem;
+
+}

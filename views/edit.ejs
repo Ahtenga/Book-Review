@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs", {page: "edit"})%>
+
+<section class="edit-page">
+  <h1>Edit or delete reviews</h1>
+
+  <% if (reviews.length === 0) { %>
+    <p>No reviews yet.</p>
+  <% } else { %>
+    <div class="table-card table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th class="right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% reviews.forEach(r => { %>
+            <tr>
+              <td><%= r.title %></td>
+              <td><%= r.author %></td>
+              <td><%= r.date %></td>
+              <td class="actions">
+                <a class="btn btn-primary" href="/edit/<%= r.id %>">Edit</a>
+                <form action="/delete/<%= r.id %>" method="POST"
+                      onsubmit="return confirm('Delete this review?');">
+                  <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</section>
+
+<%- include("partials/footer.ejs")%>

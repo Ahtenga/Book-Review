@@ -1,0 +1,7 @@
+things to do:
+     check if one author already posted something
+     AI for generating a fitting image
+          Adding an image of the book
+     Header bar needs @media for smaller screen
+     Saving the blog reviews after a specific number of posts
+     Maybe be able to add comments to blog reviews or have a discussion site

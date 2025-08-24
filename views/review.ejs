@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs", {page: "review", review})%>
+
+<section class="review-detail">
+  <div class="review-detail-card">
+    <h1 class="review-detail-title"><%= review.title %></h1>
+    <p class="review-detail-meta">
+      <span><%= review.author %></span> · <span><%= review.date %></span>
+    </p>
+    <div class="review-detail-text">
+      <p><%= review.text %></p>
+    </div>
+
+    <div class="review-detail-actions">
+      <a class="btn" href="/">← Back to all reviews</a>
+      <a class="btn btn-primary" href="/edit/<%= review.id %>">Edit</a>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs")%>

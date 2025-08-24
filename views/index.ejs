@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs", {page: "home"})%>
+<section class="home-section">
+  <div class="home-container">
+      <h1 id="website-intro">Careful spoilers! But welcome to Book Reviews!</h1>
+      <p id="introduction">A good book can have a great impact on a person's life, sometimes uplifting
+        other times challenging. Whether the experience was positive or negative, it often inspires reflection.
+        This website is a space for you to reflect on your reads and connect through honest reviews.
+      </p>
+      <a class="button-create" href="/create">Write a review</a> 
+  </div>
+</section>
+
+
+<section class="review">
+  <% if (reviews.length === 0) { %>
+    <p>No reviews yet. Be the first to add one!</p>
+  <% } else { %>
+    <div class="review-grid">
+      <% reviews.forEach(review => { %>
+        <article class="review-card">
+          <% if (review.heroImageUrl) { %>
+          <div class="review-card-hero has-image">
+            <img class="hero-bg" src="<%= review.heroImageUrl %>" alt="">
+            <div class="hero-text">
+              <h3 class="review-title"><%= review.title %></h3>
+              <p class="review-meta">
+                <span class="review-author"><%= review.author %></span> ·
+                <span class="review-date"><%= review.date %></span>
+              </p>
+            </div>
+          </div>
+          <% } else { %>
+            <!-- No image: show compact text header instead -->
+            <h3 class="review-title"><%= review.title %></h3>
+            <p class="review-meta">
+              <span class="review-author"><%= review.author %></span> ·
+              <span class="review-date"><%= review.date %></span>
+            </p>
+          <% } %>
+          <p class="review-text line-clamp"><%= review.text %></p>
+          <a class="card-link" href="/review/<%= review.id %>">
+            <span class="visually-hidden">Open review</span>
+          </a>
+        </article>
+      <% }) %>
+    </div>
+  <% } %>
+</section>
+
+<%- include("partials/footer.ejs")%>

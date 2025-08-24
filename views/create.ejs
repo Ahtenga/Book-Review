@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs", {page: "create"})%>
+<section class="create-page">
+     <h1>Create a new Book review</h1>
+     <form action="/submit" method="POST" class="create-form" enctype="multipart/form-data">
+          <label for="date"><%= new Date().toLocaleDateString() %></label>
+          <input type="text" name="authorname" class="review-input" placeholder="Author name">
+          <input type="text" name="reviewTitle" class="review-input" placeholder="Review title">
+          <textarea name="review" class="review-input" placeholder="Share your review"></textarea>
+          <div class="form-group">
+               <div class="form-label">Header image (optional)</div>
+               <div class="image-upload">
+                    <label for="heroImage" class="file-label">
+                         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
+                              <path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-width="2"/>
+                         </svg>
+                         <span>Choose image</span>
+                         <input id="heroImage" type="file" name="heroImage" accept="image/*">
+                    </label>
+               </div>
+               <p class="help-text">JPG/PNG up to 5&nbsp;MB.</p>
+          </div>
+          <input type="submit" value="SUBMIT" class="btn-primary">
+     </form>
+</section>
+
+<%- include("partials/footer.ejs") %>
