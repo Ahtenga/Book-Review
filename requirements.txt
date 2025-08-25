@@ -1,7 +1,10 @@
 things to do:
      check if one author already posted something
-     AI for generating a fitting image
-          Adding an image of the book
      Header bar needs @media for smaller screen
      Saving the blog reviews after a specific number of posts
-     Maybe be able to add comments to blog reviews or have a discussion site
+
+     Being able to react and comment on posts
+     Being able to keep spoilers as secrets - not immediately shown
+     Image should be shown when post is opened
+     Sorted in a specific order - folders of themes
+          Whole website should be a general review site
